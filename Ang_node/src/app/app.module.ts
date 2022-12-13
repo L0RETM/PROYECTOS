@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { TareasComponent } from "./tareas.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -17,7 +17,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        MatSlideToggleModule
+        MatCardModule
         
     ]
 })
