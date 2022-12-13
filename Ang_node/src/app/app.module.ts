@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TareasComponent } from "./tareas.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 
@@ -14,6 +16,8 @@ import { TareasComponent } from "./tareas.component";
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
+        MatSlideToggleModule
         
     ]
 })

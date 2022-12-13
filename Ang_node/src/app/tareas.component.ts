@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'tareas',
-  template: 'Listado tareas:<div *ngFor="let tarea of tareas"></div>Tarea: {{tarea.trabajo}}, Usuario:{{tarea.usuario}}',
+  template: 'Listado tareas:<div *ngFor="let tarea of tareas">Tarea: {{tarea.trabajo}}, Usuario:{{tarea.usuario}}</div>',
   
 })
 export class TareasComponent {
