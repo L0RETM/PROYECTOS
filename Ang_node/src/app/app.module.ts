@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule }from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TareasComponent } from "./tareas.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import { WebService } from './web.server';
 
 
 
@@ -12,12 +14,13 @@ import {MatCardModule} from '@angular/material/card';
     declarations: [
         AppComponent,TareasComponent
     ],
-    providers: [],
+    providers: [WebService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        MatCardModule
+        MatCardModule,
+        HttpClientModule 
         
     ]
 })

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebService } from './web.server';
 
 @Component({
   selector: 'tareas',
@@ -17,6 +18,17 @@ import { Component } from '@angular/core';
 })
 export class TareasComponent {
     tarea:any;
+
+    constructor(private webservice:WebService){//llamamos al servicio
+        
+    }
+    //ejecutamos la respuesta, salga a la vista sera asincrono
+    //para mostrarlo en consola
+
+    async ngOnInit(){
+        let respuesta= this.webservice.obtenerTareas();
+        console.log(respuesta);
+    }
     
     tareas=
     [
