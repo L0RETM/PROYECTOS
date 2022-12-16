@@ -17,7 +17,7 @@ import { WebService } from './web.server';
   
 })
 export class TareasComponent {
-    tarea:any;
+    tareas:any;
 
     constructor(private webservice:WebService){//llamamos al servicio
         
@@ -26,15 +26,11 @@ export class TareasComponent {
     //para mostrarlo en consola
 
     async ngOnInit(){
-        let respuesta= this.webservice.obtenerTareas();
-        console.log(respuesta);
+        let respuesta= await this.webservice.obtenerTareas();
+        this.tareas =respuesta;
     }
     
-    tareas=
-    [
-        {trabajo:'primera tarea', usuario:'David'},
-        {trabajo:'segunda tarea', usuario:'Daniel'}
-    ]
+   
 
  
 }

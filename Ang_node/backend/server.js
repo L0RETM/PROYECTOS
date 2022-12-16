@@ -1,13 +1,23 @@
 var express= require('express');
+var cors= require('cors');
+
 var app=express();
 
-tareas=
+//configuracion basica de un cors
+var corsOpt={
+    origin: 'http://localhost:4200',
+    optionsSuccessStatus: 200
+}
+
+var tareas=
     [
-        {trabajo:'primera tarea', usuario:'David'},
-        {trabajo:'segunda tarea', usuario:'Daniel'}
+        {trabajo:'primera tarea', usuario:'Lorena Tamayo'},
+        {trabajo:'segunda tarea', usuario:'David Cotta'}
     ]
 
-app.get('/tareas', (req,res)=>{
+ 
+
+app.get('/tareas',cors(corsOpt), (req,res)=>{
     res.json(tareas);
 
 })
