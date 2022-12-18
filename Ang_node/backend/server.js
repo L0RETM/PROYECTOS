@@ -1,5 +1,6 @@
 var express= require('express');
 var cors= require('cors');
+var bp = require('body-parser');
 
 var app=express();
 
@@ -15,11 +16,22 @@ var tareas=
         {trabajo:'segunda tarea', usuario:'David Cotta'}
     ]
 
- 
+app.use(bp.json());
 
-app.get('/tareas',cors(corsOpt), (req,res)=>{
+var api=express.Router();
+ 
+//get:tareas
+api.get('/tareas',cors(corsOpt), (req,res)=>{
     res.json(tareas);
 
 })
+//post:tarea
+api.post('/tareas',cors(corsOpt), (req,res)=>{
+    tareas.push(req.body);
+    res.sendStatus(200);
 
-app.listen(1234);
+})
+//ruta
+app.use('/api', api);
+
+app.listen(7070);
