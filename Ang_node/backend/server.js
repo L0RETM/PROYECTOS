@@ -26,7 +26,7 @@ api.get('/tareas',cors(corsOpt), (req,res)=>{
 
 })
 //post:tarea
-api.post('/tareas',cors(corsOpt), (req,res)=>{
+api.post('/tarea',cors(corsOpt), (req,res)=>{
     tareas.push(req.body);
     res.sendStatus(200);
 
