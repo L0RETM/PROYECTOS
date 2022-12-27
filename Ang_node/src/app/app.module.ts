@@ -4,15 +4,20 @@ import {HttpClientModule }from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TareasComponent } from "./tareas.component";
+import { NuevaTareasComponent } from "./nueva-tarea.component";
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+
 import { WebService } from './web.server';
 
 
 
 @NgModule({
     declarations: [
-        AppComponent,TareasComponent
+        AppComponent,TareasComponent, NuevaTareasComponent
     ],
     providers: [WebService],
     bootstrap: [AppComponent],
@@ -20,7 +25,9 @@ import { WebService } from './web.server';
         BrowserModule,
         BrowserAnimationsModule,
         MatCardModule,
-        HttpClientModule 
+        HttpClientModule ,
+        MatInputModule,
+        MatButtonModule
         
     ]
 })

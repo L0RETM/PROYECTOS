@@ -9,4 +9,5 @@ export class WebService{
     obtenerTareas(){
         return this.http.get('http://localhost:7070/api/tareas').toPromise();
     }
+
 }

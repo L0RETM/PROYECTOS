@@ -5,7 +5,7 @@ import { WebService } from './web.server';
   selector: 'tareas',
   template: `
     <h1>Listado de tareas</h1>
-    <mat-card *ngFor="let tarea of tareas" style="margin:8px">
+    <mat-card *ngFor="let tarea of tareas" >
     <mat-card-title>{{tarea.usuario}}</mat-card-title>
     <mat-card-content>
     <p>
