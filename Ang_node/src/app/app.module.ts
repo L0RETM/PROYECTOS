@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 
 import { WebService } from './web.server';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -27,7 +28,8 @@ import { WebService } from './web.server';
         MatCardModule,
         HttpClientModule ,
         MatInputModule,
-        MatButtonModule
+        MatButtonModule,
+        FormsModule
         
     ]
 })

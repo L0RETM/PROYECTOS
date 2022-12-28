@@ -19,6 +19,8 @@ var tareas=
 app.use(bp.json());
 
 var api=express.Router();
+
+api.use(cors())
  
 //get:tareas
 api.get('/tareas',cors(corsOpt), (req,res)=>{

@@ -9,5 +9,8 @@ export class WebService{
     obtenerTareas(){
         return this.http.get('http://localhost:7070/api/tareas').toPromise();
     }
+    enviarTarea(_tarea:any){
+        return this.http.post('http://localhost:7070/api/tarea', _tarea).toPromise();
+    }
 
 }

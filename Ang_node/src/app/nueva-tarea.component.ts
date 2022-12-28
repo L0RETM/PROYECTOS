@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { WebService } from './web.server';
+import {FormsModule} from '@angular/forms';
+
 
 @Component({
   selector: 'nueva-tarea',
@@ -10,14 +12,14 @@ import { WebService } from './web.server';
     <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>nombre usuario:</mat-label>
-    <input matInput placeholder="nombre usuario" >
+    <input type="text" name="usuario" [(ngModel)]="tarea.usuario" matInput placeholder="nombre usuario" >
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>escribe tu tarea:</mat-label>
-    <textarea matInput placeholder="introduzca su tarea"></textarea>
+    <textarea  type="text" name="trabajo" [(ngModel)]="tarea.trabajo"  matInput placeholder="introduzca su tarea"></textarea>
   </mat-form-field>
-  <button mat-raised-button color="primary">enviar</button>
+  <button (click)="post()" mat-raised-button color="primary">enviar</button>
     </form>
 
     </mat-card>
@@ -27,8 +29,11 @@ import { WebService } from './web.server';
 export class NuevaTareasComponent {
  
 
-    constructor(private webservice:WebService){
+    constructor(private webservice:WebService){}
         
+    tarea={trabajo:'', usuario:'' }
+    post(){
+      this.webservice.enviarTarea(this.tarea)
     }
  
 }
